@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def hello():
-    return render_template('main.html')
+    return render_template('about.html')
 
 
 @app.route('/api/enter', methods=['GET'])
@@ -21,7 +21,7 @@ def hello_world():
 
 @app.route('/nearmeshow', methods=['GET'])
 def searching():
-    return render_template('nearme_del.html')
+    return render_template('nearme.html')
 
 
 @app.route('/nearmerun', methods=['POST'])
