@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">   
 </head>
-<body>
+<body class="background">
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
     <div class="container">
         <a class="navbar-brand" href="#"><i class="fas fa-diagnoses"></i>mediGo</a>
@@ -24,10 +24,22 @@
 <div class="container body">
     <div class="row">
         <div class="col-6 background">
-            <img src="assets/background.jpg"/>
+            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-interval="1000">
+                      <img src="assets/1.jpg" class="d-block w-100 dim" alt="...">
+                  </div>
+                  <div class="carousel-item" data-interval="2000">
+                    <img src="assets/2.jpg" class="d-block w-100 dim" alt="...">
+                  </div>
+                  <div class="carousel-item" data-interval="3000">
+                    <img src="assets/3.jpg" class="d-block w-100 dim" alt="...">
+                  </div>
+                </div>
+              </div>
         </div>
         <div class="col-6">
-            <form class="form" role="form">
+            <form class="form box" role="form">
                 <h1>Sign In</h1>
                 <div class="form-group">
                     <label>Email</label>
