@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def hello():
-    return render_template('main.html')
+    return render_template('about.html')
 
 
 @app.route('/api/enter', methods=['GET'])
@@ -21,7 +21,7 @@ def hello_world():
 
 @app.route('/nearmeshow', methods=['GET'])
 def searching():
-    return render_template('nearme_del.html')
+    return render_template('nearme.html')
 
 
 @app.route('/nearmerun', methods=['POST'])
@@ -45,7 +45,57 @@ def getDisease():
 @app.route('/api/symptoms', methods=['GET'])
 def getSymptoms():
 
-    symptoms = ['Sym A', 'Sym B', 'Sym C']
+    symptoms = ['receiving_blood_transfusion',
+                'red_sore_around_nose',
+                'abnormal_menstruation',
+                'continuous_sneezing',
+                'breathlessness',
+                'blackheads',
+                'shivering',
+                'dizziness',
+                'back_pain',
+                'unsteadiness',
+                'yellow_crust_ooze',
+                'muscle_weakness',
+                'loss_of_balance',
+                'chills',
+                'ulcers_on_tongue',
+                'stomach_bleeding',
+                'lack_of_concentration',
+                'coma',
+                'neck_pain',
+                'weakness_of_one_body_side',
+                'diarrhoea',
+                'receiving_unsterile_injections',
+                'headache',
+                'family_history',
+                'fast_heart_rate',
+                'pain_behind_the_eyes',
+                'sweating',
+                'mucoid_sputum',
+                'spotting_ urination',
+                'sunken_eyes',
+                'dischromic _patches',
+                'nausea',
+                'dehydration',
+                'loss_of_appetite',
+                'abdominal_pain',
+                'stomach_pain'
+                'yellowish_skin',
+                'altered_sensorium',
+                'chest_pain',
+                'muscle_wasting',
+                'vomiting',
+                'mild_fever',
+                'high_fever',
+                'red_spots_over_body',
+                'dark_urine',
+                'itching',
+                'yellowing_of_eyes',
+                'fatigue',
+                'joint_pain',
+                'muscle_pain']
+
     data = {
         "symptoms": symptoms
     }
