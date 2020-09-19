@@ -40,7 +40,12 @@
 			var symptoms = document.getElementsByClassName('symptoms');
 			console.log(symptoms);
 			var arr = [];
-			arr.push()
+			var cb;
+			for(var i=0;i<symptoms.length;i++)
+			{ 	cb=symptoms[i].checked?1:0;
+				arr.push(cb);
+			}
+			console.log(arr);
 			$.ajax({
 				type: 'POST',
 				url: '/api/disease',
@@ -60,16 +65,13 @@
 
 <body onload="loadSymptoms()">
 	<p>Hy hello my name is Utkarsh Akhouri</p>
-<<<<<<< HEAD
 
 	<div id="symptomContainer">
 
 	</div>
 
-=======
 	<input type="checkbox" id="check" val="symptom 1">
 	<label>symptom1</label>
->>>>>>> b2a4f257dc1a1c509c02132451422603ade9cb33
 	<button onclick="getDisease()">Submit</button>
 	<input type="text" disabled="true" id="result"></input>
 </body>
