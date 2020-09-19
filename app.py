@@ -45,7 +45,6 @@ def getDisease():
 @app.route('/api/symptoms', methods=['GET'])
 def getSymptoms():
 
-    # << << << < HEAD
     symptoms = ['receiving_blood_transfusion',
                 'red_sore_around_nose',
                 'abnormal_menstruation',
@@ -81,7 +80,7 @@ def getSymptoms():
                 'dehydration',
                 'loss_of_appetite',
                 'abdominal_pain',
-                'stomach_pain'
+                'stomach_pain',
                 'yellowish_skin',
                 'altered_sensorium',
                 'chest_pain',
@@ -96,8 +95,6 @@ def getSymptoms():
                 'fatigue',
                 'joint_pain',
                 'muscle_pain']
-
-    #   symptoms = ['Sym A', 'Sym B', 'Sym C', 'Sym D']
 
     data = {
         "symptoms": symptoms
