@@ -6,9 +6,9 @@ serpwow = GoogleSearchResults("7491F4F9F2204722BD6A2BEEFAB0158E")
 ipad = geocoder.ip('me')
 
 
-def searchparams(cityname):
+def searchhosp(cityname):
 
-    q = "Medicinal Stores near "+cityname
+    q = "Hospitals near "+cityname
     location = cityname+","+str(ipad[0])
     params = {
         "q": q,
