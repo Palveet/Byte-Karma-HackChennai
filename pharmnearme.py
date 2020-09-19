@@ -19,5 +19,5 @@ def searchparams(cityname):
     # retreive the google sewarc results
     result_json = serpwow.get_json(params)
     names = result_json['local_results']
-    # print(names)
+    print(names)
     return names
