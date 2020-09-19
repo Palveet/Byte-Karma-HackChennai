@@ -45,7 +45,7 @@ def getDisease():
 @app.route('/api/symptoms', methods=['GET'])
 def getSymptoms():
 
-    symptoms = ['Sym A', 'Sym B', 'Sym C']
+    symptoms = ['Sym A', 'Sym B', 'Sym C','Sym D']
     data = {
         "symptoms": symptoms
     }
