@@ -9,7 +9,7 @@ ipad = geocoder.ip('me')
 def searchparams(cityname):
 
     q = "Medicinal Stores near "+cityname
-    location = cityname+","+str(ipad[0])
+    location = cityname  # +","+str(ipad[0])
     params = {
         "q": q,
         "type": location
@@ -19,6 +19,6 @@ def searchparams(cityname):
     # retreive the google sewarc results
     result_json = serpwow.get_json(params)
     print(result_json)
-    names = result_json['local_results']
+    names = result_json['organic_results']
     print(names)
     return names

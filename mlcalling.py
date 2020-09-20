@@ -29,5 +29,5 @@ def mlcall(disarr):
     classifier1 = SVC(kernel="rbf")
     classifier1.fit(X_train, y_train)
     # classifier1.predict(X_test)
-    d = str(classifier1.predict([disarr]))
+    d = classifier1.predict([disarr])
     return d

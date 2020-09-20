@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 import json
 from pharmnearme import searchparams
 from hospnearme import searchhosp
@@ -16,7 +16,13 @@ dis = ""
 
 @app.route('/', methods=['GET'])
 def hello():
+    print("Reached here")
     return render_template('about.html')
+
+
+@app.route('/main.css', methods=['GET'])
+def hell():
+    return render_template('main.css')
 
 
 @app.route('/api/enter', methods=['GET'])
@@ -52,7 +58,8 @@ def getDisease():
     req_data = request.get_json()
     # print(req_data['symptoms'])
     dis = mlcall(req_data['symptoms'])
-    dis = str(dis)
+    print(dis[0])
+    dis = str(dis[0])
     databaseadd(name_inp, gen_imp, age_inp, dis)
     return dis
 
@@ -110,9 +117,10 @@ def getSymptoms():
                 'fatigue',
                 'joint_pain',
                 'muscle_pain']
-
+    print(name_inp)
     data = {
-        "symptoms": symptoms
+        "symptoms": symptoms,
+        "name": name_inp
     }
     return json.dumps(data)
 
@@ -126,11 +134,20 @@ def getPerDet():
         # print(data)
         req_data = request.form
         print(req_data)
+        global name_inp
         name_inp = str(req_data['name'])
-        gen_inp = str(req_data['gen'])
+        global gen_imp
+        gen_imp = str(req_data['gen'])
+        global age_inp
         age_inp = str(req_data['age'])
-        print(name_inp, gen_inp, age_inp)
+        print(name_inp, gen_imp, age_inp)
         return redirect("/api/enter", code=302)
+
+
+@app.route('/getname', methods=['GET'])
+def getName():
+
+    return name_inp
 
 
 app.run()

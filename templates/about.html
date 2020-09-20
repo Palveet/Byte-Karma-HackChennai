@@ -1,58 +1,196 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>MediGo</title>
-        <link rel="stylesheet" type="text/css" href="main.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-diagnoses"></i>MediGo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="about.html">About
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="nearme.html">Near Me
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Select Symptoms</a>
-                    </li>
-                </ul>
-            </div>
+
+<head>
+    <title>MediGo</title>
+    <!-- <link rel="stylesheet" type="text/css" href="/Byte-Karma-HackChennai/templates/main.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            font-family: 'Raleway', 'Noto Sans JP', sans-serif;
+        }
+
+        .background {
+            background-color: #eeffff;
+        }
+
+        button:focus {
+            outline: 0;
+        }
+
+        .navbar .dropdown-menu .form-control {
+            width: 200px;
+        }
+
+        .navbar-dark {
+            background-color: #bbf8e3;
+        }
+
+        .navbar-dark .navbar-brand {
+            color: black !important;
+        }
+
+        .about {
+            margin-top: 60px;
+            max-width: 100% !important;
+        }
+
+        img {
+            width: 100%;
+            height: 75%;
+        }
+
+        .body {
+            margin-top: 5%;
+        }
+
+        button {
+            margin-top: 15px !important;
+        }
+
+        h1 {
+            padding: 20px;
+        }
+
+        .btn {
+            background-color: #8ac5b1 !important;
+            color: black !important;
+        }
+
+        .btn:hover {
+            background-color: #bbf8e3 !important;
+        }
+
+        .jumbotron {
+            background-color: #eeffff !important;
+        }
+
+        a {
+            color: #000 !important;
+        }
+
+        .hosp label,
+        li {
+            display: inline !important;
+            margin: 10px;
+            list-style: none;
+        }
+
+        .margin {
+            margin: 20px !important;
+        }
+
+        .box {
+            margin-top: 30px;
+            padding: 20px;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 5px;
+            background-color: white !important;
+        }
+
+        .dim {
+            height: 525px;
+            width: 100%;
+        }
+
+        p {
+            font-size: 25px;
+        }
+
+        h5 {
+            color: #000;
+            text-decoration: underline;
+            padding: 10px;
+
+        }
+
+        .navbar-dark .navbar-toggler-icon {
+            background-image: url("assets/toggler.svg") !important;
+        }
+
+        a:hover {
+            font-weight: 400;
+            font-size: 20px;
+            transition-duration: 0.5s;
+        }
+
+        .size {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-diagnoses"></i>MediGo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">About
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/nearmeshow">Near Me
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/per_det" class="nav-link">Entry</a>
+                </li>
+            </ul>
+        </div>
         </li>
-    </nav><div class="container about">
-<div class="jumbotron">
-    <h1>ABOUT US</h1>
-    <div class="row">
-        <div class="col-8">
-            <p>
-                Byte-Karma.. A team of 5 individual which came up with an idea to develop a web application which
-                                                    would help people in challenging times to stay calm and analyse their symptoms at home. mediGo is a
-                                                    platform which focuses on symptom analysis and provides near by help to people in the form of
-                                                    pharmacies in the time of need. Our motto is to tranform every citizen of India to be "Aatmanirbhar" towards their health.
-            </p>
-        </div>
-        <div class="col-4">
-            <img src="assets/bytekarma.png"/>
-        </div>
-        <div class="col-12">
-            <h3>Symptoms</h3>
-            <p>
-                A symptom is a departure from normal function or feeling which is apparent to a patient, reflecting the presence of an unusual state, or of a disease. A symptom can be subjective or objective. Tiredness is a subjective symptom whereas cough or fever are objective symptoms.In contrast to a symptom, a sign is a clue to a disease elicited by an examiner or a doctor
-            </p>
-            <h5>
-                <a href="home.html">Select Symptoms</a>
-            </h5>
+    </nav>
+    <div class="container about">
+        <div class="jumbotron">
+            <h1>ABOUT US</h1>
+            <div class="row">
+                <div class="col-8">
+                    <p>
+                        Byte-Karma.. A team of 5 individual which came up with an idea to develop a web application
+                        which
+                        would help people in challenging times to stay calm and analyse their symptoms at home. mediGo
+                        is a
+                        platform which focuses on symptom analysis and provides near by help to people in the form of
+                        pharmacies in the time of need. Our motto is to tranform every citizen of India to be
+                        "Aatmanirbhar" towards their health.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <img src="{{url_for('static', filename='bytekarma.png')}}" />
+                </div>
+                <div class="col-12">
+                    <h3>Symptoms</h3>
+                    <p>
+                        A symptom is a departure from normal function or feeling which is apparent to a patient,
+                        reflecting the presence of an unusual state, or of a disease. A symptom can be subjective or
+                        objective. Tiredness is a subjective symptom whereas cough or fever are objective symptoms.In
+                        contrast to a symptom, a sign is a clue to a disease elicited by an examiner or a doctor
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-</div></div><script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script></body></html>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
