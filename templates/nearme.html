@@ -45,6 +45,47 @@
                     <a href="" class="nav-link">Select Symptoms</a>
                 </li>
             </ul>
+</body>
+</div>
+</div>
+</nav>
+<!--<input type="text" id="cityName" />-->
+<button onClick="searchQuery()">Submit</button>
+<div class="container body">
+    
+    <h1 class="text-center">Hospitals and Pharmacies Near you!</h1>
+    <div class="row">
+        <form class="form-inline my-2 my-lg-0 margin" method="POST">
+
+            <div class="col-6">
+                <ul class="hosp">
+                    <li><input type="radio" value="Hospital" id="Hospital" name="choice">
+                        <label for="Hospital">Hospital</label>
+                    </li>
+                    <li><input type="radio" value="Pharmacy" id="Pharmacy" name="choice">
+                        <label for="Pharmacy">Pharmacy</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="cityName"
+                    name="cityname" />
+                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+{%for name in names:%}
+<div class="container box">
+    
+    <div class="row">
+        <div class="col">
+            <p>Name:{{names.title}}
+            </p>
+            <p>Address:{{names.address}}
+            </p>
+            
         </div>
     </li>
 </nav><!--<input type="text" id="cityName" />--><button onclick="searchQuery()">Submit</button><div class="container body">
@@ -70,4 +111,22 @@
         <p>Name:</p>
         <p>Address:</p>
     </div>
+<<<<<<< HEAD
 </div></div><script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script></body></html>
+=======
+</div>
+{%endfor%}
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+>>>>>>> dbc7115f30559525c1c25c8421d7005ca1a721ba

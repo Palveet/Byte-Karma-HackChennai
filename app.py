@@ -2,8 +2,14 @@ from flask import Flask, render_template, request, redirect
 import json
 from pharmnearme import searchparams
 from hospnearme import searchhosp
+from databasecomm import databaseadd
+from mlcalling import mlcall
 
 app = Flask(__name__)
+name_inp = ""
+age_inp = ""
+gen_imp = ""
+dis = ""
 
 # localhost:5000/
 
@@ -30,18 +36,25 @@ def searching():
         print(choice)
         if choice == 'Pharmacy':
             cityName = req_data['cityname']
-            return str(json.dumps(searchparams(cityName)))
+            names = searchparams(cityName)
+            res = True
+            # return (json.dumps(searchparams(cityName)))
         elif choice == 'Hospital':
             cityName = req_data['cityname']
-            return str(json.dumps(searchhosp(cityName)))
+            names = searchhosp(cityName)
+            res = True
+            # return (json.dumps(searchhosp(cityName)))
+        return render_template('nearme.html', res=res, names=names)
 
 
 @app.route('/api/disease', methods=['POST'])
 def getDisease():
     req_data = request.get_json()
-    print(req_data['symptoms'])
-
-    return "You have fever"
+    # print(req_data['symptoms'])
+    dis = mlcall(req_data['symptoms'])
+    dis = str(dis)
+    databaseadd(name_inp, gen_imp, age_inp, dis)
+    return dis
 
 
 @app.route('/api/symptoms', methods=['GET'])
