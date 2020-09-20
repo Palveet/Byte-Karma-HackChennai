@@ -54,6 +54,7 @@
 <!--<input type="text" id="cityName" />-->
 <button onClick="searchQuery()">Submit</button>
 <div class="container body">
+    
     <h1 class="text-center">Hospitals and Pharmacies Near you!</h1>
     <div class="row">
         <form class="form-inline my-2 my-lg-0 margin" method="POST">
@@ -77,20 +78,21 @@
 
     </div>
 </div>
+{%for name in names:%}
 <div class="container box">
+    
     <div class="row">
         <div class="col">
-            <p>Name:
+            <p>Name:{{names.title}}
             </p>
-            <p>Address:
+            <p>Address:{{names.address}}
             </p>
-            <p>Timing Details:
-            </p>
-            <p>Website:
-            </p>
+            
         </div>
     </div>
 </div>
+{%endfor%}
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
